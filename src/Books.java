@@ -26,6 +26,7 @@ public class Books {
      * @param bookTitle it is the title of the book variable
      */
     public void setBookTitle(String bookTitle) {
+
         this.bookTitle = bookTitle;   // set the title of the book
     }
 
@@ -47,11 +48,10 @@ public class Books {
 
     /**
      * the method sets borrow to be false by taking the setting method
-     * @param borrow takes the setting method pass the value false
      */
-    public void returned(boolean borrow){
+    public void returned() {
         setBorrow(false);      //pass the value false to borrow
-    }
 
+    }
 
 }
