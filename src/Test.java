@@ -1,21 +1,28 @@
-import java.util.ArrayList;
-
+/**
+ * this class is for testing the previous classes
+ */
 public class Test extends Library{
 
 
     public static void main(String[] args) {
 
         //the books that needed to be added
+
         Books a=new Books();
         a.setBookTitle("The DaVinci Code");
         Books b=new Books();
-        a.setBookTitle("Le Petit Prince");
+        b.setBookTitle("Le Petit Prince");
         Books c=new Books();
-        a.setBookTitle("A Tale of Two Cities");
+        c.setBookTitle("A Tale of Two Cities");
         Books d=new Books();
-        a.setBookTitle("The Lord of The Rings");
+        d.setBookTitle("The Lord of The Rings");
 
-        //creating the libraries
+        //null object, because putting a nothing in the array list created an error in the methods in books.
+
+        Books e=new Books();
+
+        //creating the libraries.
+
         Library queen = new Library();
         queen.setLibraryName("Lennoxville Library");
         queen.setLibraryAddress("120 Queen St.");
@@ -26,34 +33,58 @@ public class Test extends Library{
 
         //adding the books to the array list
 
-        ArrayList<Books> queenCollection=new ArrayList<Books>();
-        ArrayList<Books> collageCollection=new ArrayList<Books>();
+        queen.addBooks(a);
+        queen.addBooks(b);
+        queen.addBooks(c);
+        queen.addBooks(d);
 
-        queenCollection.add(a);
-        queenCollection.add(b);
-        queenCollection.add(c);
-        queenCollection.add(d);
+        collage.addBooks(e); //add the null object as empty library
 
 
         //printing the open hours
+
+        System.out.println();
         queen.printHours();
         System.out.println("********************");
         collage.printHours();
+        System.out.println("");
+        System.out.println("");
+
+        // printing available books
+
+        queen.availableBooks();
+        System.out.println();
 
         // borrow lord of the ring
 
-        queen.borrowBook(queenCollection,d);
-        queen.borrowBook(queenCollection,d);
-        collage.borrowBook(collageCollection,d);
+        queen.borrowBook(d);
+        System.out.println("");
+
+        queen.borrowBook(d);
+        System.out.println("");
+
+        collage.borrowBook(d);
+        System.out.println("");
 
         //print available books
 
-        queen.availableBooks(queenCollection);
-        collage.availableBooks(collageCollection);
+        queen.availableBooks();
+        System.out.println("");
+
+        collage.availableBooks();
+        System.out.println("");
 
         //return lord of the rings
 
         queen.returnBook(d);
-        queen.availableBooks(queenCollection);
+        System.out.println("");
+
+        queen.borrowBook(d);
+        System.out.println("");
+
+        queen.availableBooks();
+
+        //one problem: for some reason the program does not show Lord of the rings even though the value of borrow is false
+        // I couldn't solve that problem
     }
 }

@@ -5,13 +5,16 @@
  */
 
 /**
- * first class is books. this class is responsible for creating the books
+ * first class is books. this class is responsible for creating the books objects
  * giving them a title, and the status if they're borrowed or not
  */
 public class Books {
 
     private String bookTitle;     //book title variable
     private boolean borrow=false; // boolean variable to determine if the book is borrowed or not
+
+
+    public Books(){}
 
     /**
      * getter method to get the book title
